@@ -1,12 +1,18 @@
-# dependencies
-node_modules
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# build output
+node_modules
 dist
 dist-ssr
 *.local
 
-# editor
+# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -16,12 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 
 # coverage
 coverage
