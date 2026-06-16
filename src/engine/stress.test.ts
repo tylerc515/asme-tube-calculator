@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { lookupStress } from './stress';
+import { lookupStress, getMaterials } from './stress';
 
 describe('lookupStress — exact temperature hit', () => {
   it('returns the tabulated value when tempF matches exactly', () => {
@@ -160,5 +160,28 @@ describe('lookupStress — error cases', () => {
       // SI value should be approximately PSI / 145.038
       expect(si.value).toBeCloseTo(us.value / 145.038, 0);
     }
+  });
+});
+
+describe('getMaterials', () => {
+  it('returns 18 entries for asme-2015 (excludes T23 with empty curve)', () => {
+    expect(getMaterials('asme-2015')).toHaveLength(18);
+  });
+
+  it('returns 14 entries for pre-1999', () => {
+    expect(getMaterials('pre-1999')).toHaveLength(14);
+  });
+
+  it('excludes SA-213-T23', () => {
+    const ids = getMaterials('asme-2015').map((m) => m.id);
+    expect(ids).not.toContain('SA-213-T23');
+  });
+
+  it('every entry has id, spec, and grade as strings', () => {
+    getMaterials('asme-2015').forEach((m) => {
+      expect(typeof m.id).toBe('string');
+      expect(typeof m.spec).toBe('string');
+      expect(typeof m.grade).toBe('string');
+    });
   });
 });
