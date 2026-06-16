@@ -1,0 +1,1484 @@
+{
+  "id": "asme-2015",
+  "label": "ASME 2015 (post-1999)",
+  "designFactor": 3.5,
+  "source": "ASME BPVC 2015 Section II-D Table 1A",
+  "materials": [
+    {
+      "id": "SA-178-A",
+      "spec": "SA-178",
+      "grade": "A",
+      "productForm": "Wld. tube",
+      "tableLineNo": 9,
+      "pdfKeyPage": 53,
+      "pdfStressPage": 55,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 13.3
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 12.8
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 12.4
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 10.7
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 9.2
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 7.9
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 5.9
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 4.0
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 2.5
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 53 line 9"
+    },
+    {
+      "id": "SA-178-C",
+      "spec": "SA-178",
+      "grade": "C",
+      "productForm": "Wld. tube",
+      "tableLineNo": 29,
+      "pdfKeyPage": 61,
+      "pdfStressPage": 63,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 15.6
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 13.0
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 10.8
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 8.7
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 5.0
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 3.4
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 2.5
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 61 line 29"
+    },
+    {
+      "id": "SA-178-D",
+      "spec": "SA-178",
+      "grade": "D",
+      "productForm": "Wld. tube",
+      "tableLineNo": 2,
+      "pdfKeyPage": 69,
+      "pdfStressPage": 71,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 19.8
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 18.3
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 14.8
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 12.0
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 9.3
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 6.7
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 4.0
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 2.5
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 69 line 2"
+    },
+    {
+      "id": "SA-192",
+      "spec": "SA-192",
+      "grade": "",
+      "productForm": "Smls. tube",
+      "tableLineNo": 12,
+      "pdfKeyPage": 53,
+      "pdfStressPage": 55,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 150,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 13.4
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 13.3
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 12.8
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 12.4
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 10.7
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 9.2
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 7.9
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 5.9
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 4.0
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 2.5
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 53 line 12"
+    },
+    {
+      "id": "SA-209-T1",
+      "spec": "SA-209",
+      "grade": "T1",
+      "productForm": "Smls. tube",
+      "tableLineNo": 1,
+      "pdfKeyPage": 77,
+      "pdfStressPage": 79,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 150,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 15.4
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 14.9
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 14.5
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 13.7
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 8.2
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 2.5
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 77 line 1"
+    },
+    {
+      "id": "SA-209-T1a",
+      "spec": "SA-209",
+      "grade": "T1a",
+      "productForm": "Smls. tube",
+      "tableLineNo": 7,
+      "pdfKeyPage": 77,
+      "pdfStressPage": 79,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 16.8
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 16.4
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 15.9
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 15.4
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 13.7
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 8.2
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 4.8
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 77 line 7"
+    },
+    {
+      "id": "SA-209-T1b",
+      "spec": "SA-209",
+      "grade": "T1b",
+      "productForm": "Smls. tube",
+      "tableLineNo": 42,
+      "pdfKeyPage": 73,
+      "pdfStressPage": 75,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 150,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 15.0
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 14.7
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 14.3
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 14.0
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 13.5
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 13.0
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 8.2
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 4.8
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 73 line 42"
+    },
+    {
+      "id": "SA-210-A1",
+      "spec": "SA-210",
+      "grade": "A-1",
+      "productForm": "Smls. tube",
+      "tableLineNo": 32,
+      "pdfKeyPage": 61,
+      "pdfStressPage": 63,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 150,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 15.6
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 13.0
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 10.8
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 8.7
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 5.9
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 4.0
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 2.5
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 61 line 32"
+    },
+    {
+      "id": "SA-210-C",
+      "spec": "SA-210",
+      "grade": "C",
+      "productForm": "Smls. tube",
+      "tableLineNo": 5,
+      "pdfKeyPage": 69,
+      "pdfStressPage": 71,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 19.8
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 18.3
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 14.8
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 12.0
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 9.3
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 6.7
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 4.0
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 2.5
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 69 line 5"
+    },
+    {
+      "id": "SA-213-T2",
+      "spec": "SA-213",
+      "grade": "T2",
+      "productForm": "Smls. tube",
+      "tableLineNo": 37,
+      "pdfKeyPage": 77,
+      "pdfStressPage": 79,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 16.9
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 16.4
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 16.1
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 15.4
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 14.9
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 14.5
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 13.9
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 9.2
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 5.9
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 77 line 37"
+    },
+    {
+      "id": "SA-213-T5",
+      "spec": "SA-213",
+      "grade": "T5",
+      "productForm": "Smls. tube",
+      "tableLineNo": 31,
+      "pdfKeyPage": 89,
+      "pdfStressPage": 91,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 16.6
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 16.5
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 16.4
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 16.2
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 15.9
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 15.6
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 14.5
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 13.8
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 10.9
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 8.0
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 5.8
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 4.2
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 2.9
+        },
+        {
+          "tempF": 1150,
+          "stressKsi": 1.8
+        },
+        {
+          "tempF": 1200,
+          "stressKsi": 1.0
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 89 line 31"
+    },
+    {
+      "id": "SA-213-T9",
+      "spec": "SA-213",
+      "grade": "T9",
+      "productForm": "Smls. tube",
+      "tableLineNo": 5,
+      "pdfKeyPage": 93,
+      "pdfStressPage": 95,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 16.6
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 16.5
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 16.4
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 16.2
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 15.9
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 15.6
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 14.5
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 13.8
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 13.0
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 10.6
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 7.4
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 5.0
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 3.3
+        },
+        {
+          "tempF": 1150,
+          "stressKsi": 2.2
+        },
+        {
+          "tempF": 1200,
+          "stressKsi": 1.5
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 93 line 5"
+    },
+    {
+      "id": "SA-213-T11",
+      "spec": "SA-213",
+      "grade": "T11",
+      "productForm": "Smls. tube",
+      "tableLineNo": 2,
+      "pdfKeyPage": 85,
+      "pdfStressPage": 87,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 16.8
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 16.2
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 15.4
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 14.8
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 14.4
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 14.0
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 13.6
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 9.3
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 6.3
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 4.2
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 2.8
+        },
+        {
+          "tempF": 1150,
+          "stressKsi": 1.9
+        },
+        {
+          "tempF": 1200,
+          "stressKsi": 1.2
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 85 line 2"
+    },
+    {
+      "id": "SA-213-T12",
+      "spec": "SA-213",
+      "grade": "T12",
+      "productForm": "Smls. tube",
+      "tableLineNo": 14,
+      "pdfKeyPage": 81,
+      "pdfStressPage": 83,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 16.8
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 16.5
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 16.5
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 16.5
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 16.3
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 16.0
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 15.8
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 15.5
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 15.3
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 14.9
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 14.5
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 11.3
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 7.2
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 4.5
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 2.8
+        },
+        {
+          "tempF": 1150,
+          "stressKsi": 1.8
+        },
+        {
+          "tempF": 1200,
+          "stressKsi": 1.1
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 81 line 14"
+    },
+    {
+      "id": "SA-213-T22",
+      "spec": "SA-213",
+      "grade": "T22",
+      "productForm": "Smls. tube",
+      "tableLineNo": 22,
+      "pdfKeyPage": 85,
+      "pdfStressPage": 87,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 16.6
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 13.6
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 10.8
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 8.0
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 5.7
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 3.8
+        },
+        {
+          "tempF": 1150,
+          "stressKsi": 2.4
+        },
+        {
+          "tempF": 1200,
+          "stressKsi": 1.4
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 85 line 22"
+    },
+    {
+      "id": "SA-213-T23",
+      "spec": "SA-213",
+      "grade": "T23",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 17.1
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 16.5
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 15.3
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 13.5
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 11.5
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 9.5
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 7.5
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 5.7
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 4.0
+        }
+      ],
+      "notes": "T23 not in 2015 Table 1A; values from ASME code case"
+    },
+    {
+      "id": "SA-213-T91",
+      "spec": "SA-213",
+      "grade": "T91",
+      "productForm": "Smls. tube",
+      "tableLineNo": 15,
+      "pdfKeyPage": 93,
+      "pdfStressPage": 95,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 19.3
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 13.1
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 9.5
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 6.5
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 4.3
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 2.8
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 93 line 15"
+    },
+    {
+      "id": "SA-213-TP304H",
+      "spec": "SA-213",
+      "grade": "TP304H",
+      "productForm": "Smls. tube",
+      "tableLineNo": 39,
+      "pdfKeyPage": 133,
+      "pdfStressPage": 135,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 16.7
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 15.0
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 13.8
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 12.9
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 12.3
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 12.0
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 11.7
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 11.5
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 11.2
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 11.0
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 10.8
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 10.6
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 10.4
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 10.1
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 9.8
+        },
+        {
+          "tempF": 1150,
+          "stressKsi": 7.7
+        },
+        {
+          "tempF": 1200,
+          "stressKsi": 6.1
+        },
+        {
+          "tempF": 1250,
+          "stressKsi": 4.7
+        },
+        {
+          "tempF": 1300,
+          "stressKsi": 3.7
+        },
+        {
+          "tempF": 1350,
+          "stressKsi": 2.9
+        },
+        {
+          "tempF": 1400,
+          "stressKsi": 2.3
+        },
+        {
+          "tempF": 1450,
+          "stressKsi": 1.8
+        },
+        {
+          "tempF": 1500,
+          "stressKsi": 1.4
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 133 line 39"
+    },
+    {
+      "id": "SA-213-TP316",
+      "spec": "SA-213",
+      "grade": "TP316",
+      "productForm": "Smls. tube",
+      "tableLineNo": 7,
+      "pdfKeyPage": 121,
+      "pdfStressPage": 123,
+      "curve": [
+        {
+          "tempF": 100,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 200,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 300,
+          "stressKsi": 20.0
+        },
+        {
+          "tempF": 400,
+          "stressKsi": 19.3
+        },
+        {
+          "tempF": 500,
+          "stressKsi": 18.0
+        },
+        {
+          "tempF": 600,
+          "stressKsi": 17.0
+        },
+        {
+          "tempF": 650,
+          "stressKsi": 16.6
+        },
+        {
+          "tempF": 700,
+          "stressKsi": 16.3
+        },
+        {
+          "tempF": 750,
+          "stressKsi": 16.1
+        },
+        {
+          "tempF": 800,
+          "stressKsi": 15.9
+        },
+        {
+          "tempF": 850,
+          "stressKsi": 15.7
+        },
+        {
+          "tempF": 900,
+          "stressKsi": 15.6
+        },
+        {
+          "tempF": 950,
+          "stressKsi": 15.4
+        },
+        {
+          "tempF": 1000,
+          "stressKsi": 15.3
+        },
+        {
+          "tempF": 1050,
+          "stressKsi": 15.1
+        },
+        {
+          "tempF": 1100,
+          "stressKsi": 12.4
+        },
+        {
+          "tempF": 1150,
+          "stressKsi": 9.8
+        },
+        {
+          "tempF": 1200,
+          "stressKsi": 7.4
+        },
+        {
+          "tempF": 1250,
+          "stressKsi": 5.5
+        },
+        {
+          "tempF": 1300,
+          "stressKsi": 4.1
+        },
+        {
+          "tempF": 1350,
+          "stressKsi": 3.1
+        },
+        {
+          "tempF": 1400,
+          "stressKsi": 2.3
+        },
+        {
+          "tempF": 1450,
+          "stressKsi": 1.7
+        },
+        {
+          "tempF": 1500,
+          "stressKsi": 1.3
+        }
+      ],
+      "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 121 line 7"
+    }
+  ]
+}
