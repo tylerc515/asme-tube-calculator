@@ -12,6 +12,10 @@ This is a static, client-side app. Nothing is sent to a server.
 
 Early development. Engine and stress data are being built out before the UI.
 
+## Architecture decisions
+
+Decision records are in [`docs/decisions/`](docs/decisions/).
+
 ## Development
 
 Requires Node 24+.
