@@ -1128,73 +1128,8 @@
       "tableLineNo": null,
       "pdfKeyPage": null,
       "pdfStressPage": null,
-      "curve": [
-        {
-          "tempF": 100,
-          "stressKsi": 17.1
-        },
-        {
-          "tempF": 200,
-          "stressKsi": 17.1
-        },
-        {
-          "tempF": 300,
-          "stressKsi": 17.1
-        },
-        {
-          "tempF": 400,
-          "stressKsi": 17.1
-        },
-        {
-          "tempF": 500,
-          "stressKsi": 17.1
-        },
-        {
-          "tempF": 600,
-          "stressKsi": 17.1
-        },
-        {
-          "tempF": 650,
-          "stressKsi": 17.1
-        },
-        {
-          "tempF": 700,
-          "stressKsi": 17.1
-        },
-        {
-          "tempF": 750,
-          "stressKsi": 16.5
-        },
-        {
-          "tempF": 800,
-          "stressKsi": 15.3
-        },
-        {
-          "tempF": 850,
-          "stressKsi": 13.5
-        },
-        {
-          "tempF": 900,
-          "stressKsi": 11.5
-        },
-        {
-          "tempF": 950,
-          "stressKsi": 9.5
-        },
-        {
-          "tempF": 1000,
-          "stressKsi": 7.5
-        },
-        {
-          "tempF": 1050,
-          "stressKsi": 5.7
-        },
-        {
-          "tempF": 1100,
-          "stressKsi": 4.0
-        }
-      ],
-      "notes": "T23 not in 2015 Table 1A; values from ASME code case"
+      "curve": [],
+      "notes": "NOT FOUND in Table 1A"
     },
     {
       "id": "SA-213-T91",
