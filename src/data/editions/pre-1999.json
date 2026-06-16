@@ -1,0 +1,232 @@
+{
+  "id": "pre-1999",
+  "label": "Pre-1999",
+  "designFactor": 4.0,
+  "source": "Old Stress columns, #3RB_TB sheet, ASME MIN WALL CALC.XLS",
+  "materials": [
+    {
+      "id": "SA-178-A",
+      "spec": "SA-178",
+      "grade": "A",
+      "productForm": "Wld. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 11.5 },
+        { "tempF": 800, "stressKsi": 7.7 },
+        { "tempF": 900, "stressKsi": 4.3 },
+        { "tempF": 1000, "stressKsi": 1.3 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-178-C",
+      "spec": "SA-178",
+      "grade": "C",
+      "productForm": "Wld. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 14.4 },
+        { "tempF": 800, "stressKsi": 9.2 },
+        { "tempF": 900, "stressKsi": 4.3 },
+        { "tempF": 1000, "stressKsi": 1.3 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-192",
+      "spec": "SA-192",
+      "grade": "",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 11.5 },
+        { "tempF": 800, "stressKsi": 9.0 },
+        { "tempF": 900, "stressKsi": 5.0 },
+        { "tempF": 1000, "stressKsi": 1.5 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-209-T1",
+      "spec": "SA-209",
+      "grade": "T1",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 13.8 },
+        { "tempF": 800, "stressKsi": 13.5 },
+        { "tempF": 900, "stressKsi": 12.7 },
+        { "tempF": 1000, "stressKsi": 4.8 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-209-T1a",
+      "spec": "SA-209",
+      "grade": "T1a",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 15.0 },
+        { "tempF": 800, "stressKsi": 14.4 },
+        { "tempF": 900, "stressKsi": 13.6 },
+        { "tempF": 1000, "stressKsi": 4.8 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-209-T1b",
+      "spec": "SA-209",
+      "grade": "T1b",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 13.2 },
+        { "tempF": 800, "stressKsi": 12.6 },
+        { "tempF": 900, "stressKsi": 11.9 },
+        { "tempF": 1000, "stressKsi": 4.8 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-210-A1",
+      "spec": "SA-210",
+      "grade": "A-1",
+      "productForm": "Smls. & wld. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 14.4 },
+        { "tempF": 800, "stressKsi": 10.8 },
+        { "tempF": 900, "stressKsi": 5.0 },
+        { "tempF": 1000, "stressKsi": 1.5 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-213-T2",
+      "spec": "SA-213",
+      "grade": "T2",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 14.2 },
+        { "tempF": 800, "stressKsi": 13.5 },
+        { "tempF": 900, "stressKsi": 12.8 },
+        { "tempF": 1000, "stressKsi": 5.9 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-213-T5",
+      "spec": "SA-213",
+      "grade": "T5",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 13.4 },
+        { "tempF": 800, "stressKsi": 12.8 },
+        { "tempF": 900, "stressKsi": 10.4 },
+        { "tempF": 1000, "stressKsi": 5.8 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-213-T9",
+      "spec": "SA-213",
+      "grade": "T9",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 13.4 },
+        { "tempF": 800, "stressKsi": 12.8 },
+        { "tempF": 900, "stressKsi": 12.0 },
+        { "tempF": 1000, "stressKsi": 7.4 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-213-T11",
+      "spec": "SA-213",
+      "grade": "T11",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 15.0 },
+        { "tempF": 800, "stressKsi": 15.0 },
+        { "tempF": 900, "stressKsi": 13.1 },
+        { "tempF": 1000, "stressKsi": 6.6 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-213-T12",
+      "spec": "SA-213",
+      "grade": "T12",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 15.0 },
+        { "tempF": 800, "stressKsi": 14.8 },
+        { "tempF": 900, "stressKsi": 13.1 },
+        { "tempF": 1000, "stressKsi": 6.6 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-213-T22",
+      "spec": "SA-213",
+      "grade": "T22",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 15.0 },
+        { "tempF": 800, "stressKsi": 15.0 },
+        { "tempF": 900, "stressKsi": 13.1 },
+        { "tempF": 1000, "stressKsi": 7.8 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    },
+    {
+      "id": "SA-213-TP304H",
+      "spec": "SA-213",
+      "grade": "TP304H",
+      "productForm": "Smls. tube",
+      "tableLineNo": null,
+      "pdfKeyPage": null,
+      "pdfStressPage": null,
+      "curve": [
+        { "tempF": 700, "stressKsi": 15.9 },
+        { "tempF": 800, "stressKsi": 15.2 },
+        { "tempF": 900, "stressKsi": 14.7 },
+        { "tempF": 1000, "stressKsi": 13.8 }
+      ],
+      "notes": "Source: Old Stress column, #3RB_TB, ASME MIN WALL CALC.XLS"
+    }
+  ]
+}
