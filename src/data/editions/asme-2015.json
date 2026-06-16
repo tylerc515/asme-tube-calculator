@@ -1182,19 +1182,27 @@
         },
         {
           "tempF": 950,
-          "stressKsi": 9.5
+          "stressKsi": 17.8
         },
         {
           "tempF": 1000,
-          "stressKsi": 6.5
+          "stressKsi": 16.3
         },
         {
           "tempF": 1050,
-          "stressKsi": 4.3
+          "stressKsi": 14.0
         },
         {
           "tempF": 1100,
-          "stressKsi": 2.8
+          "stressKsi": 10.3
+        },
+        {
+          "tempF": 1150,
+          "stressKsi": 7.0
+        },
+        {
+          "tempF": 1200,
+          "stressKsi": 4.3
         }
       ],
       "notes": "Read from Table 1A, 2015 BPVC Section II-D, page 93 line 15"
