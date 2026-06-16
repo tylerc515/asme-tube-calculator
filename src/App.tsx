@@ -44,7 +44,7 @@ function App() {
     const S = stressResult.value;
     const Dval = parseFloat(D);
     const wVal = parseFloat(w);
-    if (Number.isNaN(Dval) || Number.isNaN(wVal) || wVal <= 0 || wVal > 1) return null;
+    if (Number.isNaN(Dval) || Dval <= 0 || Number.isNaN(wVal) || wVal <= 0 || wVal > 1) return null;
     if (solveMode === 'thickness') {
       const Pval = parseFloat(P);
       if (Number.isNaN(Pval) || Pval <= 0) return null;
@@ -191,7 +191,7 @@ function App() {
               type="number"
               value={w}
               onChange={(ev) => setW(ev.target.value)}
-              min="0"
+              min="0.05"
               max="1"
               step="0.05"
             />
