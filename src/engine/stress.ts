@@ -11,6 +11,8 @@ interface StressPoint {
 
 interface MaterialEntry {
   id: string;
+  spec: string;
+  grade: string;
   curve: StressPoint[];
 }
 
@@ -22,6 +24,20 @@ const editions: Record<string, EditionData> = {
   'asme-2015': asme2015 as EditionData,
   'pre-1999': pre1999 as EditionData,
 };
+
+export interface MaterialInfo {
+  id: string;
+  spec: string;
+  grade: string;
+}
+
+export function getMaterials(edition: 'pre-1999' | 'asme-2015'): MaterialInfo[] {
+  const data = editions[edition];
+  if (!data) return [];
+  return data.materials
+    .filter((m) => m.curve.length > 0)
+    .map(({ id, spec, grade }) => ({ id, spec, grade }));
+}
 
 export interface StressQuery {
   materialId: string;
