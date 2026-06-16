@@ -59,4 +59,37 @@ describe('calculator UI', () => {
     // SA-178-C max is 1000°F — error message contains "outside the tabulated range"
     expect(await screen.findByText(/outside the tabulated range/i)).toBeInTheDocument();
   });
+
+  it('does not show a calc result when the temperature lookup fails', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.selectOptions(screen.getByRole('combobox', { name: /material/i }), 'SA-178-C');
+    await user.type(screen.getByPlaceholderText('e.g. 700'), '1500');
+    // Fill in calc inputs so a result would appear if S were incorrectly available
+    await user.type(screen.getByPlaceholderText('e.g. 1200'), '970');
+    await user.type(screen.getByPlaceholderText('e.g. 2.375'), '2.375');
+    expect(await screen.findByText(/outside the tabulated range/i)).toBeInTheDocument();
+    expect(screen.queryByText(/^\d+\.\d{4}$/)).not.toBeInTheDocument();
+  });
+
+  it('clears the stress badge when edition changes and the material is absent from the new edition', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    // SA-178-D is only in asme-2015, confirmed absent from pre-1999
+    await user.selectOptions(screen.getByRole('combobox', { name: /material/i }), 'SA-178-D');
+    await user.type(screen.getByPlaceholderText('e.g. 700'), '700');
+    expect(await screen.findByText(/S = \d+/)).toBeInTheDocument();
+    await user.selectOptions(screen.getByRole('combobox', { name: /edition/i }), 'pre-1999');
+    expect(screen.queryByText(/S = \d+/)).not.toBeInTheDocument();
+  });
+
+  it('e constant uses independent unit-system values, not a conversion of 0.04 in', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    expect(screen.getByText(/e = 0\.04 in/)).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: /SI \(MPa \/ mm\)/i }));
+    // 0.04 in × 25.4 = 1.016 mm; the spec mandates 1.0 mm as an independent constant
+    expect(screen.getByText(/e = 1 mm/)).toBeInTheDocument();
+    expect(screen.queryByText(/1\.016/)).not.toBeInTheDocument();
+  });
 });
