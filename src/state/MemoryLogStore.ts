@@ -9,7 +9,7 @@ export class MemoryLogStore implements LogStore {
   }
 
   getAll(): readonly LogRow[] {
-    return this.rows;
+    return [...this.rows];
   }
 
   clear(): void {
