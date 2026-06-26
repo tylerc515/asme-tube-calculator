@@ -13,6 +13,7 @@ interface MaterialEntry {
   id: string;
   spec: string;
   grade: string;
+  productForm: string;
   curve: StressPoint[];
 }
 
@@ -29,6 +30,7 @@ export interface MaterialInfo {
   id: string;
   spec: string;
   grade: string;
+  productForm: string;
 }
 
 export function getMaterials(edition: 'pre-1999' | 'asme-2015'): MaterialInfo[] {
@@ -36,7 +38,7 @@ export function getMaterials(edition: 'pre-1999' | 'asme-2015'): MaterialInfo[] 
   if (!data) return [];
   return data.materials
     .filter((m) => m.curve.length > 0)
-    .map(({ id, spec, grade }) => ({ id, spec, grade }));
+    .map(({ id, spec, grade, productForm }) => ({ id, spec, grade, productForm }));
 }
 
 export interface StressQuery {

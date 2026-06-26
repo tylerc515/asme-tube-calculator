@@ -309,3 +309,84 @@
   font-size: 12px;
   color: var(--accent);
 }
+
+.tab-nav {
+  display: flex;
+  gap: 0;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.tab-nav button {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.tab-nav button[aria-selected='true'] {
+  border-bottom-color: var(--accent);
+  color: var(--text-h);
+}
+
+.ref-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px 0;
+  max-width: 720px;
+}
+
+.ref-section h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 12px;
+}
+
+.ref-formula {
+  font-family: var(--mono);
+  font-size: 14px;
+  background: var(--code-bg);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 0 0 12px;
+}
+
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.ref-table th,
+.ref-table td {
+  text-align: left;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ref-table th {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.ref-note {
+  font-size: 12px;
+  color: var(--text);
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+.ref-notes-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}

@@ -109,4 +109,24 @@ describe('calculator UI', () => {
     await user.click(screen.getByRole('button', { name: /MAWP P/i }));
     expect(screen.getByRole('button', { name: /use last result/i })).toBeDisabled();
   });
+
+  it('initially shows Calculator tab content', () => {
+    render(<App />);
+    expect(screen.getByRole('combobox', { name: /material/i })).toBeInTheDocument();
+  });
+
+  it('clicking Reference tab shows reference content', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('tab', { name: /reference/i }));
+    expect(screen.getByRole('heading', { name: /PG-27\.2\.1/i })).toBeInTheDocument();
+  });
+
+  it('clicking Calculator tab returns to calculator', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('tab', { name: /reference/i }));
+    await user.click(screen.getByRole('tab', { name: /calculator/i }));
+    expect(screen.getByRole('combobox', { name: /material/i })).toBeInTheDocument();
+  });
 });
