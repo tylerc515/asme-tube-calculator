@@ -20,6 +20,7 @@ export function TubeCalculator() {
   const [D, setD] = useState('');
   const [w, setW] = useState('1');
   const [expandedEnd, setExpandedEnd] = useState(false);
+  const [showWork, setShowWork] = useState(false);
 
   const materials = useMemo(() => getMaterials(edition), [edition]);
 
@@ -66,6 +67,8 @@ export function TubeCalculator() {
 
   const resultPrecision =
     solveMode === 'thickness' ? (unitSystem === 'US' ? 4 : 2) : unitSystem === 'US' ? 0 : 2;
+
+  const minWall = unitSystem === 'US' ? 0.125 : 3.2;
 
   return (
     <div className="calc-body">
@@ -226,6 +229,55 @@ export function TubeCalculator() {
               </>
             ) : (
               calcResult.error
+            )}
+          </div>
+        )}
+
+        {solveMode === 'thickness' && calcResult?.ok && calcResult.value < minWall && (
+          <p className="min-wall-note">
+            Below typical manufacturing minimum ({unitSystem === 'US' ? '0.125 in' : '3.2 mm'})
+          </p>
+        )}
+
+        {calcResult?.ok && (
+          <div className="show-work">
+            <button type="button" onClick={() => setShowWork((v) => !v)}>
+              {showWork ? 'Hide work' : 'Show work'}
+            </button>
+            {showWork && (
+              <dl className="steps">
+                {solveMode === 'thickness' ? (
+                  <>
+                    <dt>PD / (2Sw + P)</dt>
+                    <dd>
+                      {calcResult.steps['pressureTerm'].toFixed(resultPrecision)} {lUnit}
+                    </dd>
+                    <dt>0.005D</dt>
+                    <dd>
+                      {calcResult.steps['correctionTerm'].toFixed(resultPrecision)} {lUnit}
+                    </dd>
+                    <dt>e (input)</dt>
+                    <dd>
+                      {e.toFixed(resultPrecision)} {lUnit}
+                    </dd>
+                  </>
+                ) : (
+                  <>
+                    <dt>2t − 0.01D − 2e</dt>
+                    <dd>
+                      {calcResult.steps['numerator'].toFixed(resultPrecision)} {lUnit}
+                    </dd>
+                    <dt>D − (t − 0.005D − e)</dt>
+                    <dd>
+                      {calcResult.steps['denominator'].toFixed(resultPrecision)} {lUnit}
+                    </dd>
+                    <dt>Sw</dt>
+                    <dd>
+                      {calcResult.steps['Sw'].toFixed(0)} {pUnit}
+                    </dd>
+                  </>
+                )}
+              </dl>
             )}
           </div>
         )}
