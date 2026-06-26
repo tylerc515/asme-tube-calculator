@@ -15,8 +15,8 @@ describe('ReferenceTab', () => {
 
   it('edition table contains both design factors', () => {
     render(<ReferenceTab />);
-    expect(screen.getByText(/3\.5/)).toBeInTheDocument();
-    expect(screen.getByText(/4\.0/)).toBeInTheDocument();
+    expect(screen.getByRole('cell', { name: /3\.5/ })).toBeInTheDocument();
+    expect(screen.getByRole('cell', { name: /4\.0/ })).toBeInTheDocument();
   });
 
   it('materials table has Spec, Grade, Product Form headers', () => {
