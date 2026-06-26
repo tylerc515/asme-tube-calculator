@@ -256,3 +256,50 @@
   margin: 0;
   color: var(--text-h);
 }
+
+.tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--text);
+  font-size: 10px;
+  cursor: default;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.tooltip-wrap::before {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--panel-bg, #1e1e1e);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 11px;
+  white-space: normal;
+  max-width: 220px;
+  width: max-content;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 10;
+}
+
+.tooltip-wrap:hover::before,
+.tooltip-wrap:focus-visible::before {
+  opacity: 1;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+}
