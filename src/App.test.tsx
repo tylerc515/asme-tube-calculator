@@ -37,7 +37,7 @@ describe('calculator UI', () => {
     await user.selectOptions(screen.getByRole('combobox', { name: /material/i }), 'SA-178-C');
     await user.type(screen.getByPlaceholderText('e.g. 700'), '700');
     await user.type(screen.getByPlaceholderText('e.g. 1200'), '970');
-    await user.type(screen.getByPlaceholderText('e.g. 2.375'), '2.375');
+    await user.type(screen.getAllByPlaceholderText('e.g. 2.375')[0], '2.375');
     // golden vector: P=970 D=2.375 S=15600 → t≈0.0835
     expect(await screen.findByText(/0\.083[45]/)).toBeInTheDocument();
   });
@@ -48,7 +48,7 @@ describe('calculator UI', () => {
     expect(screen.getByPlaceholderText('e.g. 1200')).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: /MAWP P/i }));
     expect(screen.queryByPlaceholderText('e.g. 1200')).not.toBeInTheDocument();
-    expect(screen.getByPlaceholderText('e.g. 0.165')).toBeInTheDocument();
+    expect(screen.getAllByPlaceholderText('e.g. 0.165')[0]).toBeInTheDocument();
   });
 
   it('shows an error when temperature is out of range', async () => {
@@ -67,7 +67,7 @@ describe('calculator UI', () => {
     await user.type(screen.getByPlaceholderText('e.g. 700'), '1500');
     // Fill in calc inputs so a result would appear if S were incorrectly available
     await user.type(screen.getByPlaceholderText('e.g. 1200'), '970');
-    await user.type(screen.getByPlaceholderText('e.g. 2.375'), '2.375');
+    await user.type(screen.getAllByPlaceholderText('e.g. 2.375')[0], '2.375');
     expect(await screen.findByText(/outside the tabulated range/i)).toBeInTheDocument();
     expect(screen.queryByText(/^\d+\.\d{4}$/)).not.toBeInTheDocument();
   });
@@ -91,5 +91,22 @@ describe('calculator UI', () => {
     // 0.04 in × 25.4 = 1.016 mm; the spec mandates 1.0 mm as an independent constant
     expect(screen.getByText(/e = 1 mm/)).toBeInTheDocument();
     expect(screen.queryByText(/1\.016/)).not.toBeInTheDocument();
+  });
+
+  it('bend "Use last result" is enabled after a valid thickness calculation', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.selectOptions(screen.getByRole('combobox', { name: /material/i }), 'SA-178-C');
+    await user.type(screen.getByPlaceholderText('e.g. 700'), '700');
+    await user.type(screen.getByPlaceholderText('e.g. 1200'), '970');
+    await user.type(screen.getAllByPlaceholderText('e.g. 2.375')[0], '2.375');
+    expect(await screen.findByRole('button', { name: /use last result/i })).not.toBeDisabled();
+  });
+
+  it('bend "Use last result" is disabled when solve mode is MAWP', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /MAWP P/i }));
+    expect(screen.getByRole('button', { name: /use last result/i })).toBeDisabled();
   });
 });

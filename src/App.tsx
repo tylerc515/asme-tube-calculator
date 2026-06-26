@@ -4,6 +4,7 @@ import { getMaterials, lookupStress } from './engine/stress';
 import { solveThickness, solveMAWP } from './engine/tube';
 import { EXPANDED_END_E } from './engine/units';
 import type { UnitSystem } from './engine/units';
+import { BendCalculator } from './components/BendCalculator';
 
 type Edition = 'pre-1999' | 'asme-2015';
 type SolveMode = 'thickness' | 'mawp';
@@ -54,6 +55,11 @@ function App() {
     if (Number.isNaN(tVal) || tVal <= 0) return null;
     return solveMAWP({ t: tVal, D: Dval, S, w: wVal, e });
   }, [stressResult, D, w, P, t, solveMode, e]);
+
+  const lastT: number | undefined =
+    solveMode === 'thickness' && calcResult !== null && calcResult.ok
+      ? calcResult.value
+      : undefined;
 
   const pUnit = unitSystem === 'US' ? 'psi' : 'MPa';
   const lUnit = unitSystem === 'US' ? 'in' : 'mm';
@@ -221,6 +227,7 @@ function App() {
           )}
         </section>
       </div>
+      <BendCalculator unitSystem={unitSystem} lastT={lastT} />
     </main>
   );
 }
