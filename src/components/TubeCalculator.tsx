@@ -216,7 +216,7 @@ export function TubeCalculator() {
             />
             Expanded tube end (e = {EXPANDED_END_E[unitSystem]} {lUnit})
           </label>
-          <Tooltip text="Adds 0.04 in (1.0 mm) per PG-27.4.3 for tubes expanded into headers or drums." />
+          <Tooltip text="Adds 0.04 in (1.0 mm) per PG-27.4.4 for tubes expanded into headers or drums." />
         </div>
 
         {calcResult && (
