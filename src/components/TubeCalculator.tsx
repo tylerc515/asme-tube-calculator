@@ -4,6 +4,7 @@ import { solveThickness, solveMAWP } from '../engine/tube';
 import { EXPANDED_END_E } from '../engine/units';
 import type { UnitSystem } from '../engine/units';
 import { BendCalculator } from './BendCalculator';
+import { Tooltip } from './Tooltip';
 
 type Edition = 'pre-1999' | 'asme-2015';
 type SolveMode = 'thickness' | 'mawp';
@@ -90,6 +91,7 @@ export function TubeCalculator() {
 
         <label className="field">
           Edition
+          <Tooltip text="Code year governing allowable stresses. Post-1999 editions use a 3.5:1 design factor; pre-1999 used 4:1." />
           <select
             value={edition}
             onChange={(ev) => handleEditionChange(ev.target.value as Edition)}
@@ -101,6 +103,7 @@ export function TubeCalculator() {
 
         <label className="field">
           Material
+          <Tooltip text="Tube specification and grade. Determines the allowable stress S from Table 1A of Section II-D." />
           <select value={materialId} onChange={(ev) => setMaterialId(ev.target.value)}>
             <option value="">— select —</option>
             {materials.map((m) => (
@@ -114,6 +117,7 @@ export function TubeCalculator() {
 
         <label className="field">
           Design temperature (°F)
+          <Tooltip text="Temperature at which the tube operates at full pressure. Determines S from Table 1A." />
           <input
             type="number"
             value={tempF}
@@ -155,6 +159,7 @@ export function TubeCalculator() {
         {solveMode === 'thickness' ? (
           <label className="field">
             Design pressure P ({pUnit})
+            <Tooltip text="Maximum allowable working pressure (gauge). Must be positive." />
             <input
               type="number"
               value={P}
@@ -165,6 +170,7 @@ export function TubeCalculator() {
         ) : (
           <label className="field">
             Wall thickness t ({lUnit})
+            <Tooltip text="Nominal outside-to-inside wall thickness being checked against MAWP." />
             <input
               type="number"
               value={t}
@@ -176,6 +182,7 @@ export function TubeCalculator() {
 
         <label className="field">
           Outside diameter D ({lUnit})
+          <Tooltip text="Tube outside diameter as ordered or measured." />
           <input
             type="number"
             value={D}
@@ -186,6 +193,7 @@ export function TubeCalculator() {
 
         <label className="field">
           Joint efficiency w
+          <Tooltip text="Ligament efficiency or weld joint efficiency per PG-27.4.5. 1.0 for seamless tubes; less for ligamented drums." />
           <input
             type="number"
             value={w}
@@ -196,14 +204,17 @@ export function TubeCalculator() {
           />
         </label>
 
-        <label className="field checkbox-field">
-          <input
-            type="checkbox"
-            checked={expandedEnd}
-            onChange={(ev) => setExpandedEnd(ev.target.checked)}
-          />
-          Expanded tube end (e = {EXPANDED_END_E[unitSystem]} {lUnit})
-        </label>
+        <div className="checkbox-row">
+          <label className="field checkbox-field">
+            <input
+              type="checkbox"
+              checked={expandedEnd}
+              onChange={(ev) => setExpandedEnd(ev.target.checked)}
+            />
+            Expanded tube end (e = {EXPANDED_END_E[unitSystem]} {lUnit})
+          </label>
+          <Tooltip text="Adds 0.04 in (1.0 mm) per PG-27.4.3 for tubes expanded into headers or drums." />
+        </div>
 
         {calcResult && (
           <div className={`result ${calcResult.ok ? 'ok' : 'err'}`}>
