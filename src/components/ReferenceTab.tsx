@@ -110,10 +110,10 @@ export function ReferenceTab() {
           </tbody>
         </table>
         <p className="ref-note">
-          The 1999 ASME Code Cases reduced the design factor for carbon and low-alloy steel, raising
-          tabulated allowable stresses proportionally. Materials qualified after 1999 appear only in
-          post-1999 editions. Use pre-1999 tables when required by the jurisdiction or the repair
-          specification.
+          The 1999 ASME Code Cases reduced the design factor for carbon and low-alloy steel from 4:1
+          to 3.5:1, raising tabulated allowable stresses proportionally. Materials qualified after
+          1999 appear only in post-1999 editions. Use pre-1999 tables when required by the
+          jurisdiction or the repair specification.
         </p>
       </section>
 
