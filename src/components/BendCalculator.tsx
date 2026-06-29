@@ -36,7 +36,7 @@ export function BendCalculator({ unitSystem, lastT }: BendCalculatorProps) {
       </h2>
 
       <label className="field">
-        Straight-tube min wall t ({lUnit})
+        <span className="field-label">Straight-tube min wall t ({lUnit})</span>
         <input
           type="number"
           value={tInput}
@@ -54,7 +54,7 @@ export function BendCalculator({ unitSystem, lastT }: BendCalculatorProps) {
       </button>
 
       <label className="field">
-        Outside diameter D ({lUnit})
+        <span className="field-label">Outside diameter D ({lUnit})</span>
         <input
           type="number"
           value={D}
@@ -64,7 +64,7 @@ export function BendCalculator({ unitSystem, lastT }: BendCalculatorProps) {
       </label>
 
       <label className="field">
-        Bend radius to centerline R ({lUnit})
+        <span className="field-label">Bend radius to centerline R ({lUnit})</span>
         <input
           type="number"
           value={R}
