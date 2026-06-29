@@ -1,8 +1,10 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import os from 'os';
+import path from 'path';
 
-// https://vite.dev/config/
 export default defineConfig({
+  cacheDir: path.join(os.tmpdir(), 'vite-asme-calculator'),
   plugins: [react()],
   test: {
     environment: 'jsdom',
