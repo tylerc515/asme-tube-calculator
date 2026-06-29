@@ -260,46 +260,48 @@ export function TubeCalculator() {
             </p>
           )}
 
-          <div className="show-work">
-            <button type="button" onClick={() => setShowWork((v) => !v)}>
-              {showWork ? 'Hide work' : 'Show work'}
-            </button>
-            {showWork && (
-              <dl className="steps">
-                {solveMode === 'thickness' ? (
-                  <>
-                    <dt>PD / (2Sw + P)</dt>
-                    <dd>
-                      {calcResult.steps['pressureTerm'].toFixed(resultPrecision)} {lUnit}
-                    </dd>
-                    <dt>0.005D</dt>
-                    <dd>
-                      {calcResult.steps['correctionTerm'].toFixed(resultPrecision)} {lUnit}
-                    </dd>
-                    <dt>e (input)</dt>
-                    <dd>
-                      {e.toFixed(resultPrecision)} {lUnit}
-                    </dd>
-                  </>
-                ) : (
-                  <>
-                    <dt>2t − 0.01D − 2e</dt>
-                    <dd>
-                      {calcResult.steps['numerator'].toFixed(resultPrecision)} {lUnit}
-                    </dd>
-                    <dt>D − (t − 0.005D − e)</dt>
-                    <dd>
-                      {calcResult.steps['denominator'].toFixed(resultPrecision)} {lUnit}
-                    </dd>
-                    <dt>Sw</dt>
-                    <dd>
-                      {calcResult.steps['Sw'].toFixed(0)} {pUnit}
-                    </dd>
-                  </>
-                )}
-              </dl>
-            )}
-          </div>
+          {calcResult.ok && (
+            <div className="show-work">
+              <button type="button" onClick={() => setShowWork((v) => !v)}>
+                {showWork ? 'Hide work' : 'Show work'}
+              </button>
+              {showWork && (
+                <dl className="steps">
+                  {solveMode === 'thickness' ? (
+                    <>
+                      <dt>PD / (2Sw + P)</dt>
+                      <dd>
+                        {calcResult.steps['pressureTerm'].toFixed(resultPrecision)} {lUnit}
+                      </dd>
+                      <dt>0.005D</dt>
+                      <dd>
+                        {calcResult.steps['correctionTerm'].toFixed(resultPrecision)} {lUnit}
+                      </dd>
+                      <dt>e (input)</dt>
+                      <dd>
+                        {e.toFixed(resultPrecision)} {lUnit}
+                      </dd>
+                    </>
+                  ) : (
+                    <>
+                      <dt>2t − 0.01D − 2e</dt>
+                      <dd>
+                        {calcResult.steps['numerator'].toFixed(resultPrecision)} {lUnit}
+                      </dd>
+                      <dt>D − (t − 0.005D − e)</dt>
+                      <dd>
+                        {calcResult.steps['denominator'].toFixed(resultPrecision)} {lUnit}
+                      </dd>
+                      <dt>Sw</dt>
+                      <dd>
+                        {calcResult.steps['Sw'].toFixed(0)} {pUnit}
+                      </dd>
+                    </>
+                  )}
+                </dl>
+              )}
+            </div>
+          )}
         </div>
       )}
 
