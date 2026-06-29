@@ -44,6 +44,25 @@
   margin: 0;
 }
 
+h2.inputs-heading {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-bottom: 16px;
+}
+
+.field-subheading {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
 .toggle-group {
   display: flex;
   border: 1px solid var(--border);
@@ -389,4 +408,14 @@
   gap: 8px;
   font-size: 13px;
   line-height: 1.5;
+}
+
+.app-footer {
+  margin-top: 48px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 11px;
+  color: var(--text);
+  opacity: 0.5;
 }

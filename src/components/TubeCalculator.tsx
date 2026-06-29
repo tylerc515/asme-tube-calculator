@@ -73,8 +73,12 @@ export function TubeCalculator() {
   return (
     <div className="calc-body">
       <section className="panel">
-        <h2>Inputs</h2>
+        <h2 className="inputs-heading">Inputs</h2>
 
+        <div className="field-subheading">
+          <span>Units</span>
+          <Tooltip text="Sets the unit system for all inputs and outputs. US uses psi and inches; SI uses MPa and mm. The e constant (expanded tube ends) is 0.04 in or 1.0 mm — these are independent code values, not conversions of each other." />
+        </div>
         <div className="toggle-group" role="group" aria-label="Unit system">
           <button
             type="button"
@@ -162,7 +166,7 @@ export function TubeCalculator() {
         {solveMode === 'thickness' ? (
           <label className="field">
             Design pressure P ({pUnit})
-            <Tooltip text="Maximum allowable working pressure (gauge). Must be positive." />
+            <Tooltip text="Maximum allowable working pressure (gauge). For boilers, this can be found on the boiler nameplate or in the original design documentation. Must be positive." />
             <input
               type="number"
               value={P}

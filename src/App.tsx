@@ -27,6 +27,12 @@ function App() {
         </nav>
       </header>
       {tab === 'calc' ? <TubeCalculator /> : <ReferenceTab />}
+      <footer className="app-footer">
+        <p>
+          Built by Tyler Chambers. Calculations based solely on ASME BPVC Section I and Section II
+          Part D (2015 edition). Not a substitute for engineering judgment or a licensed inspector.
+        </p>
+      </footer>
     </main>
   );
 }
