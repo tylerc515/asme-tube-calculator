@@ -8,22 +8,22 @@ bend (torus) check.
 
 This is a static, client-side app. Nothing is sent to a server.
 
-## Status
+## Live app
 
-Early development. Engine and stress data are being built out before the UI.
+https://tylerc515.github.io/asme-tube-calculator/
+
+## Local development
+
+```sh
+npm install
+npm run dev       # http://localhost:5173
+npm test          # run all tests
+npm run build     # production build
+```
 
 ## Architecture decisions
 
 Decision records are in [`docs/decisions/`](docs/decisions/).
-
-## Development
-
-Requires Node 24+.
-
-```bash
-npm install
-npm run dev
-```
 
 ## Scripts
 
