@@ -1,11 +1,12 @@
 .calc {
-  text-align: left;
-  padding: 32px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px;
 }
 
 .calc-header {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .calc-header h1 {
@@ -20,34 +21,26 @@
   margin: 0;
 }
 
-.calc-body {
+.calculator {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 0;
 }
 
-.calc-panels {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+.calc-section {
+  background: var(--panel-bg);
   border: 1px solid var(--border);
   border-radius: 8px;
-  overflow: hidden;
-}
-
-.calc-panels .panel:first-child {
-  border-right: 1px solid var(--border);
-}
-
-.panel {
-  padding: 24px;
-  background: var(--panel-bg);
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.panel h2 {
+.section-heading {
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -57,14 +50,41 @@
   margin: 0 0 4px;
 }
 
-.panel-heading {
+.result-block {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bend-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bend-panel h2 {
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text);
   opacity: 0.7;
-  margin: 0 0 16px;
+  margin: 0 0 4px;
+}
+
+.bend-label {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.7;
 }
 
 .unit-toggle {
@@ -74,7 +94,6 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
-  margin-bottom: 4px;
 }
 
 .unit-toggle button {
@@ -132,7 +151,7 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .field-label {
@@ -141,15 +160,15 @@
   gap: 4px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--text);
   letter-spacing: 0.02em;
+  color: var(--text);
 }
 
 .field select,
 .field input[type='number'] {
   width: 100%;
   padding: 8px 10px;
-  font-size: 15px;
+  font-size: 13px;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: var(--bg);
@@ -169,7 +188,7 @@
 }
 
 input::placeholder {
-  opacity: 0.35;
+  opacity: 0.3;
 }
 
 .checkbox-field {
@@ -206,14 +225,14 @@ input::placeholder {
 }
 
 .result.ok {
+  width: 100%;
   min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--accent-bg);
+  background: rgba(124, 77, 255, 0.12);
   border: 1px solid var(--accent);
-  margin-top: 4px;
 }
 
 .result.err {
@@ -232,7 +251,7 @@ input::placeholder {
 
 .result-value {
   font-family: var(--mono);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
@@ -248,13 +267,8 @@ input::placeholder {
     padding: 20px 16px;
   }
 
-  .calc-panels {
-    grid-template-columns: 1fr;
-  }
-
-  .calc-panels .panel:first-child {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
+  .calculator {
+    padding: 16px 0;
   }
 }
 
@@ -265,18 +279,6 @@ input::placeholder {
     color: #f88;
     border-color: #600;
   }
-}
-
-.bend-panel {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-.bend-label {
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
-  opacity: 0.7;
 }
 
 .use-last-btn {
@@ -294,6 +296,12 @@ input::placeholder {
   color: var(--text);
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.min-wall-note {
+  margin: 0;
+  font-size: 12px;
+  color: var(--accent);
 }
 
 .show-work {
@@ -330,8 +338,7 @@ input::placeholder {
   color: var(--text-h);
 }
 
-.tooltip-wrap {
-  position: relative;
+.tooltip-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -343,32 +350,24 @@ input::placeholder {
   font-size: 10px;
   cursor: default;
   flex-shrink: 0;
+  vertical-align: middle;
 }
 
-.tooltip-wrap::before {
-  content: attr(data-tip);
-  position: absolute;
-  bottom: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--panel-bg, #1e1e1e);
-  color: var(--text-h);
+.tooltip-bubble {
+  position: fixed;
+  transform: translate(-50%, -100%);
+  background: #1e1e2e;
+  color: var(--text-h, #fff);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 6px 8px;
+  border-radius: 6px;
+  padding: 8px 10px;
   font-size: 11px;
+  line-height: 1.5;
+  max-width: 240px;
   white-space: normal;
-  max-width: 220px;
-  width: max-content;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.1s;
-  z-index: 10;
-}
-
-.tooltip-wrap:hover::before,
-.tooltip-wrap:focus-visible::before {
-  opacity: 1;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .checkbox-row {
@@ -376,10 +375,15 @@ input::placeholder {
   align-items: center;
 }
 
-.min-wall-note {
-  margin: 4px 0 0;
-  font-size: 12px;
-  color: var(--accent);
+.field-subheading {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 2px;
 }
 
 .tab-nav {
@@ -409,7 +413,8 @@ input::placeholder {
   flex-direction: column;
   gap: 32px;
   padding: 24px 0;
-  max-width: 720px;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .ref-section h2 {
@@ -461,17 +466,6 @@ input::placeholder {
   gap: 8px;
   font-size: 13px;
   line-height: 1.5;
-}
-
-.field-subheading {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text);
-  margin-bottom: 6px;
 }
 
 .app-footer {

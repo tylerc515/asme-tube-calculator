@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { Tooltip } from './Tooltip';
 
 describe('Tooltip', () => {
@@ -13,8 +13,9 @@ describe('Tooltip', () => {
     expect(screen.getByLabelText('some tip')).toBeInTheDocument();
   });
 
-  it('sets data-tip attribute to the tooltip text', () => {
+  it('shows bubble text on mouse enter', () => {
     render(<Tooltip text="some tip" />);
-    expect(screen.getByText('?')).toHaveAttribute('data-tip', 'some tip');
+    fireEvent.mouseEnter(screen.getByText('?'));
+    expect(screen.getByText('some tip')).toBeInTheDocument();
   });
 });
