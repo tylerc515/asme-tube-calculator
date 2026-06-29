@@ -30,7 +30,7 @@ export function BendCalculator({ unitSystem, lastT }: BendCalculatorProps) {
   }, [tInput, D, R]);
 
   return (
-    <section className="panel bend-panel">
+    <section className="bend-panel">
       <h2>
         Bend Check <span className="bend-label">— Supplementary, not PG-27.2.1</span>
       </h2>
