@@ -35,43 +35,45 @@ export function BendCalculator({ unitSystem, lastT }: BendCalculatorProps) {
         Bend Check <span className="bend-label">— Supplementary, not PG-27.2.1</span>
       </h2>
 
-      <label className="field">
-        <span className="field-label">Straight-tube min wall t ({lUnit})</span>
-        <input
-          type="number"
-          value={tInput}
-          onChange={(ev) => setTInput(ev.target.value)}
-          placeholder={unitSystem === 'US' ? 'e.g. 0.165' : 'e.g. 4.5'}
-        />
-      </label>
-      <button
-        type="button"
-        className="use-last-btn"
-        onClick={handleUseLastResult}
-        disabled={lastT === undefined}
-      >
-        Use last result
-      </button>
+      <div className="section-grid">
+        <div className="field">
+          <span className="field-label">Straight-tube min wall t ({lUnit})</span>
+          <input
+            type="number"
+            value={tInput}
+            onChange={(ev) => setTInput(ev.target.value)}
+            placeholder={unitSystem === 'US' ? 'e.g. 0.165' : 'e.g. 4.5'}
+          />
+          <button
+            type="button"
+            className="use-last-btn"
+            onClick={handleUseLastResult}
+            disabled={lastT === undefined}
+          >
+            Use last result
+          </button>
+        </div>
 
-      <label className="field">
-        <span className="field-label">Outside diameter D ({lUnit})</span>
-        <input
-          type="number"
-          value={D}
-          onChange={(ev) => setD(ev.target.value)}
-          placeholder={unitSystem === 'US' ? 'e.g. 2.375' : 'e.g. 51'}
-        />
-      </label>
+        <label className="field">
+          <span className="field-label">Outside diameter D ({lUnit})</span>
+          <input
+            type="number"
+            value={D}
+            onChange={(ev) => setD(ev.target.value)}
+            placeholder={unitSystem === 'US' ? 'e.g. 2.375' : 'e.g. 51'}
+          />
+        </label>
 
-      <label className="field">
-        <span className="field-label">Bend radius to centerline R ({lUnit})</span>
-        <input
-          type="number"
-          value={R}
-          onChange={(ev) => setR(ev.target.value)}
-          placeholder={unitSystem === 'US' ? 'e.g. 3.0' : 'e.g. 76.5'}
-        />
-      </label>
+        <label className="field">
+          <span className="field-label">Bend radius to centerline R ({lUnit})</span>
+          <input
+            type="number"
+            value={R}
+            onChange={(ev) => setR(ev.target.value)}
+            placeholder={unitSystem === 'US' ? 'e.g. 3.0' : 'e.g. 76.5'}
+          />
+        </label>
+      </div>
 
       {result && (
         <div className={`result ${result.ok ? 'ok' : 'err'}`}>
