@@ -73,172 +73,181 @@ export function TubeCalculator() {
   return (
     <div className="calculator">
       <div className="global-inputs">
-        <div className="field-subheading">
-          <span>Units</span>
-          <Tooltip text="Sets the unit system for all inputs and outputs. US uses psi and inches; SI uses MPa and mm. The e constant (expanded tube ends) is 0.04 in or 1.0 mm — these are independent code values, not conversions of each other." />
-        </div>
-        <div className="unit-toggle" role="group" aria-label="Unit system">
-          <button
-            type="button"
-            aria-pressed={unitSystem === 'US'}
-            className={unitSystem === 'US' ? 'active' : ''}
-            onClick={() => setUnitSystem('US')}
-          >
-            US (psi / in)
-          </button>
-          <button
-            type="button"
-            aria-pressed={unitSystem === 'SI'}
-            className={unitSystem === 'SI' ? 'active' : ''}
-            onClick={() => setUnitSystem('SI')}
-          >
-            SI (MPa / mm)
-          </button>
-        </div>
+        <div className="global-inputs-grid">
+          <div className="field">
+            <span className="field-label">Units</span>
+            <div className="unit-toggle" role="group" aria-label="Unit system">
+              <button
+                type="button"
+                aria-pressed={unitSystem === 'US'}
+                className={unitSystem === 'US' ? 'active' : ''}
+                onClick={() => setUnitSystem('US')}
+              >
+                US (psi / in)
+              </button>
+              <button
+                type="button"
+                aria-pressed={unitSystem === 'SI'}
+                className={unitSystem === 'SI' ? 'active' : ''}
+                onClick={() => setUnitSystem('SI')}
+              >
+                SI (MPa / mm)
+              </button>
+            </div>
+          </div>
 
-        <label className="field">
-          <span className="field-label">
-            Edition
-            <Tooltip text="Code year governing allowable stresses. Post-1999 editions use a 3.5:1 design factor; pre-1999 used 4:1." />
-          </span>
-          <select
-            value={edition}
-            onChange={(ev) => handleEditionChange(ev.target.value as Edition)}
-          >
-            <option value="asme-2015">ASME 2015 (post-1999)</option>
-            <option value="pre-1999">Pre-1999</option>
-          </select>
-        </label>
+          <label className="field">
+            <span className="field-label">
+              Edition
+              <Tooltip text="Code year governing allowable stresses. Post-1999 editions use a 3.5:1 design factor; pre-1999 used 4:1." />
+            </span>
+            <select
+              value={edition}
+              onChange={(ev) => handleEditionChange(ev.target.value as Edition)}
+            >
+              <option value="asme-2015">ASME 2015 (post-1999)</option>
+              <option value="pre-1999">Pre-1999</option>
+            </select>
+          </label>
+        </div>
       </div>
 
       <section className="calc-section">
         <h2 className="section-heading">Tube Properties</h2>
+        <div className="section-grid">
+          <label className="field">
+            <span className="field-label">
+              Material
+              <Tooltip text="Tube specification and grade. Determines the allowable stress S from Table 1A of Section II-D." />
+            </span>
+            <select value={materialId} onChange={(ev) => setMaterialId(ev.target.value)}>
+              <option value="">— select —</option>
+              {materials.map((m) => (
+                <option key={m.id} value={m.id}>
+                  {m.spec}
+                  {m.grade ? ` ${m.grade}` : ''}
+                </option>
+              ))}
+            </select>
+          </label>
 
-        <label className="field">
-          <span className="field-label">
-            Material
-            <Tooltip text="Tube specification and grade. Determines the allowable stress S from Table 1A of Section II-D." />
-          </span>
-          <select value={materialId} onChange={(ev) => setMaterialId(ev.target.value)}>
-            <option value="">— select —</option>
-            {materials.map((m) => (
-              <option key={m.id} value={m.id}>
-                {m.spec}
-                {m.grade ? ` ${m.grade}` : ''}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label className="field">
-          <span className="field-label">
-            Outside diameter D ({lUnit})
-            <Tooltip text="Tube outside diameter as ordered or measured." />
-          </span>
-          <input
-            type="number"
-            value={D}
-            onChange={(ev) => setD(ev.target.value)}
-            placeholder="e.g. 2.375"
-          />
-        </label>
+          <label className="field">
+            <span className="field-label">
+              Outside diameter D ({lUnit})
+              <Tooltip text="Tube outside diameter as ordered or measured." />
+            </span>
+            <input
+              type="number"
+              value={D}
+              onChange={(ev) => setD(ev.target.value)}
+              placeholder="e.g. 2.375"
+            />
+          </label>
+        </div>
       </section>
 
       <section className="calc-section">
         <h2 className="section-heading">Service Conditions</h2>
+        <div className="section-grid">
+          <label className="field">
+            <span className="field-label">
+              Design temperature (°F)
+              <Tooltip text="Temperature at which the tube operates at full pressure. Determines S from Table 1A." />
+            </span>
+            <input
+              type="number"
+              value={tempF}
+              onChange={(ev) => setTempF(ev.target.value)}
+              placeholder="e.g. 700"
+              disabled={!materialId}
+            />
+          </label>
 
-        <label className="field">
-          <span className="field-label">
-            Design temperature (°F)
-            <Tooltip text="Temperature at which the tube operates at full pressure. Determines S from Table 1A." />
-          </span>
-          <input
-            type="number"
-            value={tempF}
-            onChange={(ev) => setTempF(ev.target.value)}
-            placeholder="e.g. 700"
-            disabled={!materialId}
-          />
-        </label>
-
-        {stressResult && (
-          <div className={`stress-badge ${stressResult.ok ? 'ok' : 'err'}`}>
-            {stressResult.ok
-              ? `S = ${unitSystem === 'US' ? Math.round(stressResult.value) : stressResult.value.toFixed(2)} ${pUnit}`
-              : stressResult.error}
+          <div className="field">
+            <span className="field-label">Mode</span>
+            <div className="toggle-group" role="group" aria-label="Solve for">
+              <button
+                type="button"
+                className={solveMode === 'thickness' ? 'active' : ''}
+                onClick={() => setSolveMode('thickness')}
+              >
+                Thickness t
+              </button>
+              <button
+                type="button"
+                className={solveMode === 'mawp' ? 'active' : ''}
+                onClick={() => setSolveMode('mawp')}
+              >
+                MAWP P
+              </button>
+            </div>
           </div>
-        )}
 
-        <div className="toggle-group" role="group" aria-label="Solve for">
-          <button
-            type="button"
-            className={solveMode === 'thickness' ? 'active' : ''}
-            onClick={() => setSolveMode('thickness')}
-          >
-            Thickness t
-          </button>
-          <button
-            type="button"
-            className={solveMode === 'mawp' ? 'active' : ''}
-            onClick={() => setSolveMode('mawp')}
-          >
-            MAWP P
-          </button>
-        </div>
+          {stressResult && (
+            <div
+              className={`stress-badge ${stressResult.ok ? 'ok' : 'err'}`}
+              style={{ gridColumn: '1 / -1' }}
+            >
+              {stressResult.ok
+                ? `S = ${unitSystem === 'US' ? Math.round(stressResult.value) : stressResult.value.toFixed(2)} ${pUnit}`
+                : stressResult.error}
+            </div>
+          )}
 
-        {solveMode === 'thickness' ? (
           <label className="field">
             <span className="field-label">
-              Design pressure P ({pUnit})
-              <Tooltip text="Maximum allowable working pressure (gauge). For boilers, this can be found on the boiler nameplate or in the original design documentation. Must be positive." />
+              {solveMode === 'thickness'
+                ? `Design pressure P (${pUnit})`
+                : `Wall thickness t (${lUnit})`}
+              {solveMode === 'thickness' ? (
+                <Tooltip text="Maximum allowable working pressure (gauge). For boilers, this can be found on the boiler nameplate or in the original design documentation. Must be positive." />
+              ) : (
+                <Tooltip text="Nominal outside-to-inside wall thickness being checked against MAWP." />
+              )}
+            </span>
+            {solveMode === 'thickness' ? (
+              <input
+                type="number"
+                value={P}
+                onChange={(ev) => setP(ev.target.value)}
+                placeholder="e.g. 1200"
+              />
+            ) : (
+              <input
+                type="number"
+                value={t}
+                onChange={(ev) => setT(ev.target.value)}
+                placeholder="e.g. 0.165"
+              />
+            )}
+          </label>
+
+          <label className="field">
+            <span className="field-label">
+              Joint efficiency w
+              <Tooltip text="Ligament efficiency or weld joint efficiency per PG-27.4.5. 1.0 for seamless tubes; less for ligamented drums." />
             </span>
             <input
               type="number"
-              value={P}
-              onChange={(ev) => setP(ev.target.value)}
-              placeholder="e.g. 1200"
+              value={w}
+              onChange={(ev) => setW(ev.target.value)}
+              min="0.05"
+              max="1"
+              step="0.05"
             />
           </label>
-        ) : (
-          <label className="field">
-            <span className="field-label">
-              Wall thickness t ({lUnit})
-              <Tooltip text="Nominal outside-to-inside wall thickness being checked against MAWP." />
-            </span>
-            <input
-              type="number"
-              value={t}
-              onChange={(ev) => setT(ev.target.value)}
-              placeholder="e.g. 0.165"
-            />
-          </label>
-        )}
 
-        <label className="field">
-          <span className="field-label">
-            Joint efficiency w
-            <Tooltip text="Ligament efficiency or weld joint efficiency per PG-27.4.5. 1.0 for seamless tubes; less for ligamented drums." />
-          </span>
-          <input
-            type="number"
-            value={w}
-            onChange={(ev) => setW(ev.target.value)}
-            min="0.05"
-            max="1"
-            step="0.05"
-          />
-        </label>
-
-        <div className="checkbox-row">
-          <label className="field checkbox-field">
-            <input
-              type="checkbox"
-              checked={expandedEnd}
-              onChange={(ev) => setExpandedEnd(ev.target.checked)}
-            />
-            Expanded tube end (e = {EXPANDED_END_E[unitSystem]} {lUnit})
-          </label>
-          <Tooltip text="Adds 0.04 in (1.0 mm) per PG-27.4.4 for tubes expanded into headers or drums." />
+          <div className="checkbox-row" style={{ gridColumn: '1 / -1' }}>
+            <label className="field checkbox-field">
+              <input
+                type="checkbox"
+                checked={expandedEnd}
+                onChange={(ev) => setExpandedEnd(ev.target.checked)}
+              />
+              Expanded tube end (e = {EXPANDED_END_E[unitSystem]} {lUnit})
+            </label>
+            <Tooltip text="Adds 0.04 in (1.0 mm) per PG-27.4.4 for tubes expanded into headers or drums." />
+          </div>
         </div>
       </section>
 
