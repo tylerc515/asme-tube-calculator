@@ -29,8 +29,20 @@ function App() {
       {tab === 'calc' ? <TubeCalculator /> : <ReferenceTab />}
       <footer className="app-footer">
         <p>
-          Built by Tyler Chambers. Calculations based solely on ASME BPVC Section I and Section II
-          Part D (2015 edition). Not a substitute for engineering judgment or a licensed inspector.
+          Built by{' '}
+          <a href="https://github.com/tylerc515" target="_blank" rel="noopener noreferrer">
+            Tyler Chambers
+          </a>
+          . Calculations based solely on ASME BPVC Section I and Section II Part D (2015 edition).
+          Not a substitute for engineering judgment or a licensed inspector.{' '}
+          <a
+            href="https://github.com/tylerc515/asme-tube-calculator/wiki"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
+          </a>
+          .
         </p>
       </footer>
     </main>

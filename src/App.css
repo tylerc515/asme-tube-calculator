@@ -419,3 +419,9 @@ h2.inputs-heading {
   color: var(--text);
   opacity: 0.5;
 }
+
+.app-footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
