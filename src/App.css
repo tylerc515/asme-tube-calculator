@@ -30,6 +30,13 @@
   padding: 24px 0;
 }
 
+.global-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
 .calc-section {
   background: var(--panel-bg);
   border: 1px solid var(--border);

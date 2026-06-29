@@ -72,9 +72,7 @@ export function TubeCalculator() {
 
   return (
     <div className="calculator">
-      <section className="calc-section">
-        <h2 className="section-heading">Material Inputs</h2>
-
+      <div className="global-inputs">
         <div className="field-subheading">
           <span>Units</span>
           <Tooltip text="Sets the unit system for all inputs and outputs. US uses psi and inches; SI uses MPa and mm. The e constant (expanded tube ends) is 0.04 in or 1.0 mm — these are independent code values, not conversions of each other." />
@@ -111,6 +109,10 @@ export function TubeCalculator() {
             <option value="pre-1999">Pre-1999</option>
           </select>
         </label>
+      </div>
+
+      <section className="calc-section">
+        <h2 className="section-heading">Tube Properties</h2>
 
         <label className="field">
           <span className="field-label">
@@ -127,6 +129,23 @@ export function TubeCalculator() {
             ))}
           </select>
         </label>
+
+        <label className="field">
+          <span className="field-label">
+            Outside diameter D ({lUnit})
+            <Tooltip text="Tube outside diameter as ordered or measured." />
+          </span>
+          <input
+            type="number"
+            value={D}
+            onChange={(ev) => setD(ev.target.value)}
+            placeholder="e.g. 2.375"
+          />
+        </label>
+      </section>
+
+      <section className="calc-section">
+        <h2 className="section-heading">Service Conditions</h2>
 
         <label className="field">
           <span className="field-label">
@@ -149,10 +168,6 @@ export function TubeCalculator() {
               : stressResult.error}
           </div>
         )}
-      </section>
-
-      <section className="calc-section">
-        <h2 className="section-heading">Design Inputs</h2>
 
         <div className="toggle-group" role="group" aria-label="Solve for">
           <button
@@ -198,19 +213,6 @@ export function TubeCalculator() {
             />
           </label>
         )}
-
-        <label className="field">
-          <span className="field-label">
-            Outside diameter D ({lUnit})
-            <Tooltip text="Tube outside diameter as ordered or measured." />
-          </span>
-          <input
-            type="number"
-            value={D}
-            onChange={(ev) => setD(ev.target.value)}
-            placeholder="e.g. 2.375"
-          />
-        </label>
 
         <label className="field">
           <span className="field-label">
