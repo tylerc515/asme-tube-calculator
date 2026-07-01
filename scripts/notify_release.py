@@ -112,7 +112,12 @@ def send_to_discord(webhook_url, payload):
     request = urllib.request.Request(
         webhook_url,
         data=data,
-        headers={"Content-Type": "application/json"},
+        headers={
+            "Content-Type": "application/json",
+            # Discord's webhook endpoint sits behind Cloudflare, which blocks
+            # urllib's default "Python-urllib/x.y" User-Agent as a bot.
+            "User-Agent": "asme-tube-calculator-release-notifier/1.0",
+        },
         method="POST",
     )
     try:
