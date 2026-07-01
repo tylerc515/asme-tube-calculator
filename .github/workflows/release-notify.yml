@@ -3,6 +3,14 @@ name: Notify Discord on Release
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release tag to announce (e.g. v1.0.0)
+        required: true
+      body:
+        description: Release notes body (markdown, same format as a GitHub release)
+        required: true
 
 permissions:
   contents: read
@@ -22,6 +30,6 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DISCORD_ANALYST_ROLE_ID: ${{ secrets.DISCORD_ANALYST_ROLE_ID }}
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
-          RELEASE_BODY: ${{ github.event.release.body }}
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.version }}
+          RELEASE_BODY: ${{ github.event.release.body || inputs.body }}
         run: python scripts/notify_release.py
