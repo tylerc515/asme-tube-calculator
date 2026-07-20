@@ -403,11 +403,77 @@ input::placeholder {
   margin-bottom: 2px;
 }
 
+/*
+ * The tabs stay optically centred in the header, so the theme toggle is taken
+ * out of flow and pinned right rather than being allowed to push them along.
+ * Below 600px there is not enough room for that, so it drops onto its own row.
+ */
+.header-controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
 .tab-nav {
   display: flex;
   gap: 0;
-  margin-top: 12px;
   justify-content: center;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 2px;
+  background: var(--border);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.theme-toggle button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.theme-toggle button:hover {
+  color: var(--text-h);
+}
+
+.theme-toggle button.active {
+  background: var(--panel-bg);
+  color: var(--accent-text);
+}
+
+.theme-toggle button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+@media (max-width: 600px) {
+  .header-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .theme-toggle {
+    position: static;
+  }
 }
 
 .tab-nav button {

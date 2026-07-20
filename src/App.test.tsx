@@ -1,7 +1,12 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
+
+function resetTheme() {
+  localStorage.clear();
+  document.documentElement.removeAttribute('data-theme');
+}
 
 describe('calculator UI', () => {
   it('renders the heading', () => {
@@ -128,5 +133,79 @@ describe('calculator UI', () => {
     await user.click(screen.getByRole('tab', { name: /reference/i }));
     await user.click(screen.getByRole('tab', { name: /calculator/i }));
     expect(screen.getByRole('combobox', { name: /material/i })).toBeInTheDocument();
+  });
+});
+
+describe('color theme', () => {
+  beforeEach(resetTheme);
+  afterEach(resetTheme);
+
+  it('applies no data-theme attribute in system mode', () => {
+    render(<App />);
+    expect(document.documentElement.hasAttribute('data-theme')).toBe(false);
+  });
+
+  it('clicking Dark sets data-theme="dark" on the root element', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /dark/i }));
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+  });
+
+  it('clicking Light sets data-theme="light" on the root element', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /light/i }));
+    expect(document.documentElement.getAttribute('data-theme')).toBe('light');
+  });
+
+  it('clicking System removes the data-theme attribute again', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /dark/i }));
+    await user.click(screen.getByRole('button', { name: /system/i }));
+    expect(document.documentElement.hasAttribute('data-theme')).toBe(false);
+  });
+
+  it('persists the chosen theme to localStorage', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /light/i }));
+    expect(localStorage.getItem('theme')).toBe('light');
+  });
+
+  it('restores a saved theme from localStorage on mount', () => {
+    localStorage.setItem('theme', 'dark');
+    render(<App />);
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+    expect(screen.getByRole('button', { name: /dark/i })).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  it('falls back to system when localStorage holds an unknown value', () => {
+    localStorage.setItem('theme', 'neon');
+    render(<App />);
+    expect(document.documentElement.hasAttribute('data-theme')).toBe(false);
+  });
+
+  it('still renders when localStorage reads are blocked', () => {
+    vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+      throw new Error('access denied');
+    });
+    render(<App />);
+    expect(
+      screen.getByRole('heading', { name: /ASME Boiler Tube Calculator/i }),
+    ).toBeInTheDocument();
+    vi.restoreAllMocks();
+  });
+
+  it('still applies the theme when localStorage writes are blocked', async () => {
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('quota exceeded');
+    });
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /dark/i }));
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+    vi.restoreAllMocks();
   });
 });
