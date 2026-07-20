@@ -9,6 +9,28 @@
   margin-bottom: 24px;
 }
 
+/*
+ * The wordmark's "Software" half is #565c6c, which sits at about 2.7:1 on the
+ * dark background. A small brightness lift fixes that. Anything past ~1.3 also
+ * pushes the blue "TC" towards cyan and loses the brand colour, so keep it low.
+ * Width and height are set on the element to reserve the space before it loads.
+ */
+.tc-logo {
+  height: 34px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+:root[data-theme='dark'] .tc-logo {
+  filter: brightness(1.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .tc-logo {
+    filter: brightness(1.25);
+  }
+}
+
 .calc-header h1 {
   font-size: 32px;
   margin: 0 0 8px;

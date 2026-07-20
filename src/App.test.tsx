@@ -136,6 +136,19 @@ describe('calculator UI', () => {
   });
 });
 
+describe('branding', () => {
+  it('renders the TC Software logo in the header', () => {
+    render(<App />);
+    expect(screen.getByRole('img', { name: /tc software/i })).toBeInTheDocument();
+  });
+
+  it('points the logo at the deployed asset path', () => {
+    render(<App />);
+    const logo = screen.getByRole('img', { name: /tc software/i });
+    expect(logo.getAttribute('src')).toMatch(/tc_software_logo\.png$/);
+  });
+});
+
 describe('color theme', () => {
   beforeEach(resetTheme);
   afterEach(resetTheme);

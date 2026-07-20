@@ -49,6 +49,13 @@ function App() {
   return (
     <main className="calc">
       <header className="calc-header">
+        <img
+          src={`${import.meta.env.BASE_URL}tc_software_logo.png`}
+          alt="TC Software"
+          className="tc-logo"
+          width={172}
+          height={34}
+        />
         <h1>ASME Boiler Tube Calculator</h1>
         <p className="subtitle">Section I PG-27.2.1 — Minimum Wall Thickness</p>
         <div className="header-controls">
