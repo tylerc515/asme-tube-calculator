@@ -163,7 +163,7 @@
 
 .toggle-group button.active {
   background: var(--accent-bg);
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
 }
 
@@ -190,7 +190,7 @@
   font-size: 13px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: var(--bg);
+  background: var(--input-bg);
   color: var(--text-h);
   box-sizing: border-box;
 }
@@ -228,14 +228,14 @@ input::placeholder {
 
 .stress-badge.ok {
   background: var(--accent-bg);
-  color: var(--accent);
+  color: var(--accent-text);
   border: 1px solid var(--accent-border);
 }
 
 .stress-badge.err {
-  background: #fff0f0;
-  color: #c00;
-  border: 1px solid #fcc;
+  background: var(--err-bg);
+  color: var(--err-text);
+  border: 1px solid var(--err-border);
   font-size: 12px;
 }
 
@@ -250,14 +250,14 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(37, 99, 235, 0.12);
+  background: var(--result-bg);
   border: 1px solid var(--accent);
 }
 
 .result.err {
-  background: #fff0f0;
-  color: #c00;
-  border: 1px solid #fcc;
+  background: var(--err-bg);
+  color: var(--err-text);
+  border: 1px solid var(--err-border);
   font-size: 13px;
   padding: 12px 16px;
 }
@@ -272,7 +272,7 @@ input::placeholder {
   font-family: var(--mono);
   font-size: 40px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-text);
   line-height: 1;
 }
 
@@ -298,18 +298,9 @@ input::placeholder {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .stress-badge.err,
-  .result.err {
-    background: #3a0000;
-    color: #f88;
-    border-color: #600;
-  }
-}
-
 .use-last-btn {
   font-size: 12px;
-  color: var(--accent);
+  color: var(--accent-text);
   background: none;
   border: none;
   padding: 0;
@@ -327,7 +318,7 @@ input::placeholder {
 .min-wall-note {
   margin: 0;
   font-size: 12px;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .show-work {
@@ -338,7 +329,7 @@ input::placeholder {
 
 .show-work > button {
   font-size: 12px;
-  color: var(--accent);
+  color: var(--accent-text);
   background: none;
   border: none;
   padding: 0;
@@ -382,8 +373,8 @@ input::placeholder {
 .tooltip-bubble {
   position: fixed;
   transform: translate(-50%, -100%);
-  background: #1e1e2e;
-  color: var(--text-h, #fff);
+  background: var(--panel-bg);
+  color: var(--text-h);
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 8px 10px;
@@ -393,7 +384,7 @@ input::placeholder {
   white-space: normal;
   pointer-events: none;
   z-index: 9999;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .checkbox-row {
