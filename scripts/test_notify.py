@@ -50,6 +50,9 @@ class EmbedBuilderTests(unittest.TestCase):
         payload = nr.build_payload("v1.0.0", "## What's New\n- x", "")
         self.assertEqual(payload["embeds"][0]["color"], nr.BRAND_COLOR)
 
+    def test_brand_color_is_tc_software_blue(self):
+        self.assertEqual(nr.BRAND_COLOR, 0x2563EB)
+
     def test_embed_title_contains_version(self):
         payload = nr.build_payload("v1.0.0", "## What's New\n- x", "")
         self.assertIn("v1.0.0", payload["embeds"][0]["title"])

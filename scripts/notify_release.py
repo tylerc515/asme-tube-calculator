@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 TOOL_NAME = "ASME Boiler Tube Calculator"
 LIVE_URL = "https://tylerc515.github.io/asme-tube-calculator/"
 REPO_URL = "https://github.com/tylerc515/asme-tube-calculator"
-BRAND_COLOR = 0x7C4DFF  # purple accent from the app UI
+BRAND_COLOR = 0x2563EB  # TC Software blue, matches --accent in the app UI
 THUMBNAIL_URL = ""  # leave empty; set to a raw GitHub URL if an icon is added later
 # ----------------------------------------------------------------------------
 
