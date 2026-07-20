@@ -26,8 +26,16 @@ dist-ssr
 # coverage
 coverage
 
-# local-only ASME reference material (spreadsheets, PDFs) - never distribute
+# Python bytecode from scripts/
+__pycache__/
+*.pyc
+
+# local-only ASME reference material (spreadsheets, PDFs) - never distribute.
+# Source documents live in reference/ and stay on the local machine only.
+# The extension globs are a second layer in case a file lands outside that folder.
+reference/
 *.xls
+*.XLS
 *.xlsm
 *.xlsx
 *.pdf
